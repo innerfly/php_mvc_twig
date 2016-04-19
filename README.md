@@ -1,6 +1,6 @@
 Description
 ---
-Example PHP application using MVC pattern and Twig template engine.
+Example PHP application using MVC pattern and Twig template engine with CRUD opportunity.
 
 Installation
 ---

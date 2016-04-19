@@ -1,5 +1,4 @@
 {
-    "name": "root/mvc",
     "require": {
         "twig/twig": "~1.0"
     }
