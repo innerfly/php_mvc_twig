@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>{{ title|default('PHP MVC') }}</title>
+    {% block styles %}
+        <link rel="stylesheet" href="/public/css/default.css"/>
+    {% endblock %}
+</head>
+<body>
+
+<div id="header">
+    <a href="/">Index</a>
+</div>
+
+<div id="content">
+    <h1>{{ title|default('Default title') }}</h1>
+    
+    {% block content '' %}
+</div>
+
+<div id="footer">
+    &copy; 2016
+</div>
+
+{% block scripts %}
+    <script type="text/javascript" src="/public/js/jquery.js"></script>
+    <script type="text/javascript" src="/public/js/custom.js"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% extends 'layout.html.twig' %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="/public/js/orders.js"></script>
+{% endblock %}
+
+{% block content %}
+
+    <p><a href="/orders/add">Add new order</a></p>
+
+    {% if orders|length > 0 %}
+
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Amount, $</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>ZIP</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th rowspan="2">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.amount }}</td>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.zip }}</td>
+                    <td>{{ order.city }}</td>
+                    <td>{{ order.country }}</td>
+                    <td>{{ order.email }}</td>
+                    <td>{{ order.phone }}</td>
+                    <td>
+                        <a href="/orders/edit/{{ order.id }}">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/orders/delete/{{ order.id }}" class="delete">Delete</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+
+        </table>
+
+    {% else %}
+        <p>No orders found</p>
+    {% endif %}
+
+{% endblock %}
